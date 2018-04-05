@@ -66,3 +66,8 @@ Folders:
 All files are uploaded and ready to be viewed, video app design is simple and easy to navigate through for user(s)
 
 created for school project and self-learning practice using and understanding Vue.js and handlebars for front-end work
+
+# View and use app in browser #
+- to view project its just like part 2 just have to use vue.js 
+
+Clone repository onto your desktop, npm install to grab dependencies, import the included database into phpmyadmin, npm start to run the application, and then go the localhost:3000 in url section in browser
