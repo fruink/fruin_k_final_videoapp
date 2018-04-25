@@ -1,9 +1,11 @@
-# fruin_k_final_videoapp
-Part 3 
+# fruin_k_final_videoapp #
+Part 3 (final videoapp re-vised)
+
+- re-designed this app to match with final requirements of this project
 
 # Purpose and video app overview #
 
-Re-create started video app using Vue.js to run queries and update your views. Video app will allow user to filter through movie genres and click on desired movie to watch in a pop up lightbox feature that displays the movies ratings, description, socail media icons, and poster image of the movie. 
+Re-create started video app using Vue.js to run queries and update your views. Video app will allow user to filter through movie genres and click on desired movie to watch in another page (movies page) that displays the movie and socail media icon plugins for the most used social media. The movies page also allows you to post a review and rating of the selected movie and see it displayed below on the same page. This version of this app demonstrates and uses social media plugins that link to your accounts when logged in. Click on them and a popup will appear in the browser, that allows user to share, like, pin, tweet, or comment.
 
 # App Requirements #
 
@@ -32,11 +34,10 @@ Folders:
 
 - Views
 --Layouts that contains the main_handlebars file
-- content_handlebars
 - error_handlebars
 - home_handlebars
-- movies_handlebars
-- movies_kids_handlebars
+- movie_handlebars
+- kids_movies_handlebars
  
  - Utils 
  - contains sqlConnect file
@@ -44,7 +45,6 @@ Folders:
  -routes
  - The routes folder for video app navigation
  
- - content.js
  - index.js
  - movies.js
  - user.js
@@ -53,13 +53,14 @@ Folders:
  - public folder contains all the styling, JavaScript functionality, videos, and images used in the app
  css folder
  - sass (minified code for best practices and learning techniques)
- - kidsProfile.css
- - main.css
+ - kids_movie.css
+ - app.css
  
  JS folder
  - prod folder
  
  - main.js
+ - videopage.js
  
  - app.js is in root of project for functionality of the app 
  
