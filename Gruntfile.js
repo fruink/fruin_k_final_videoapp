@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
  
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'), // reads the packages etc inside that file
+    pkg: grunt.file.readJSON('package.json'),
       uglify: {
        
         my_target: {
