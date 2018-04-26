@@ -1,11 +1,9 @@
 module.exports = function(grunt) {
-  // 1. all config stuff goes here
+ 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'), // reads the packages etc inside that file
       uglify: {
-        // options: {
-        //   nameCache: '.tmp/grunt-uglify-cache.json',
-        // },
+       
         my_target: {
           files: {
             'public/dist/main.min.js': ['public/javascripts/main.js'],
