@@ -1,11 +1,15 @@
 # fruin_k_final_videoapp #
 Part 3 (final videoapp re-vised)
 
-- re-designed this app to match with final requirements of this project
+- re-designed this app to match with final requirements of this project and just didn't like my original design
 
 # Purpose and video app overview #
 
-Re-create started video app using Vue.js to run queries and update your views. Video app will allow user to filter through movie genres and click on desired movie to watch in another page (movies page) that displays the movie and socail media icon plugins for the most used social media. The movies page also allows you to post a review and rating of the selected movie and see it displayed below on the same page. This version of this app demonstrates and uses social media plugins that link to your accounts when logged in. Click on them and a popup will appear in the browser, that allows user to share, like, pin, tweet, or comment.
+Re-create started video app using Vue.js to run queries and update your views. Video app will allow user to filter through movie genres and click on desired movie to watch in another page (movies page) that displays the movie and socail media icon plugins for the most used social media. The movies page also allows you to post a review and rating of the selected movie and see it displayed below on the same page. A range slider determines the rating star number.
+
+
+This re-designed/developed version of this app demonstrates and uses social media plugins that link to your accounts when logged in. Click on them and a popup will appear in the browser, that allows user to share, like, pin, tweet, or comment.
+(Please note that I kept them using google developers as the source just because I wanted to demonstrate the plugins use that already consists of comments, likes, etc...rather than my own. Though I have used the twitter to link to mine to show example)
 
 # App Requirements #
 
@@ -22,9 +26,9 @@ View is updated with Vue.js methods and data nad the database will update with a
 AJAX call using the fetch API with Vue.js.
 
 # Overview of app features and functionality #
-- Video app will have the feature to filter through categories and display all of the selections available (load and play a default
-for each) by clicking on a thumbnail to play that video selected and show its details. 
-(rating, reviews / starred reviews, as well as active social media icons for the user to interact with in the popup lightbox to watch a movie)
+
+- Video app will have the feature to filter through categories and display all of the selections available (load and play a default for each) by clicking on a thumbnail to play that video selected and show its details. (rating, reviews / starred reviews, as well as active social media icons for the user to interact with in the popup lightbox to watch a movie)
+
 
 # Project Contains #
 
@@ -64,7 +68,7 @@ Folders:
  
  - app.js is in root of project for functionality of the app 
  
-All files are uploaded and ready to be viewed, video app design is simple and easy to navigate through for user(s)
+All files are uploaded and ready to be viewed, video app design is simple and easy to navigate through for user(s) while acting like a version of a fake Netflix.
 
 created for school project and self-learning practice using and understanding Vue.js and handlebars for front-end work
 
