@@ -1,0 +1,58 @@
+<!--movie page-->
+
+<section id="movie">
+
+  <!--selected movie diplayed top of page-->
+  <video controls>
+  <source src="/video/{{ trailer }}"  type="video/mp4">
+  </video>
+
+  <!--back btn to homepage-->
+  <a href="/" class ="back">
+    <i class="far fa-hand-point-left"></i>
+  </a>
+
+  <!--range slider for user's rating of selected movie (example came from w3schools and functionality came from help)-->
+  <div class="add-comment">
+
+    <!--sites msg for user(s) before making a review/rating-->
+    <h2>Please respect our review policy <i class="fas fa-thumbs-up"></i></h2>
+    <div class="moviesId">{{ movie }}</div><!--moviesId is from db as it's taking the movies_id from tbl_movies-->
+
+    <!--range slider (reference from w3schools outline [https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider]) to chose rating number (stars...could'nt figure out how to display number of desired stars for users rating :(  )-->
+    <input type="range" name="Range" min="0" max="10" step="1" v-model="numrate">
+    <!--range slider goes up to /10 for rating to allow user(S) a wide range for their movie rating-->
+
+
+    <label for="Range">${ numrate } <i class="fas fa-star"></i> rating</label>
+
+    <!--text area where user can type in their review msg and click the refresh btn in browser to see review displayed on page-->
+    <textarea name="u-review" placeholder="Post review and rating here" v-model="review"></textarea>
+    <input type="submit" value="post review" v-on:click = "addMoviereview">
+
+  </div>
+
+
+
+  <!--What user will see after they type and re-fresh browser-->
+  <div class ="comments_post" v-if="reviews.length > 0">
+    <div v-for="review in reviews">
+
+      <!--user will see their review and rating with the date that gets inserted into the database and then displayed on this page-->
+      <h2 class="post-date"><i class="far fa-star"></i> ${ review.comments_post_rating}</h2>
+      <br>
+
+      <!--user(S) will see user icon beside their review msg-->
+      <i class="fas fa-user"></i><h4>  ${ review.comments_post_copy }</h4>
+      <p>${ review.comments_post_date }</p>
+      <p>${ review.comments_post_movie }</p>
+      <p>${ review.comments_post_auth }</p>
+    </div>
+  </div>
+
+
+
+
+
+
+</section>

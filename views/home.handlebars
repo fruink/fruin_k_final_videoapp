@@ -1,0 +1,91 @@
+<!--homepage-->
+
+<!--id name of app for the entire movie review app has been given (reference from class example)-->
+<section id = 'app' class ="movie-genres">
+
+
+  <!--movie is wrapped into a given class-->
+  <div class = "movie-wrapper">
+
+
+
+
+      <!--main video (randomly shuffled everytime user goes to homepage, changed this from original design)-->
+    <video controls>
+      <source src="video/{{ defaultMovie.movies_trailer }}" type ="video/mp4">
+    </video>
+
+
+    <!--displays movie title, genre, year, and release date so....users know info of the movie featured-->
+
+
+
+
+    <!--displays feautred movies content underneath the movie-->
+    <div class="details">
+    <h1>{{ defaultMovie.movies_title }}</h1>
+    <br>
+    <h3>{{ defaultMovie.genre_name }}</h3>
+    <br>
+    <h3>{{ defaultMovie.movies_year }}</h3>
+    <h3>{{ defaultMovie.movies_runtime }}</h3>
+    <h4>{{ defaultMovie.movies_release }}</h4>
+    <br>
+    <h4>{{ defaultMovie.movies_storyline }}</h4>
+    </div>
+
+
+
+  </div>
+
+
+<!--trying to figure out how to display social media icons where they are only set/used for the selected movie ? -->
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+
+  <!--movies arranged/categorized in rows based on genres-->
+  <section class ="genre-lists" v-for="genre in genres">
+    <div v-if="genre.movies.length > 0">
+
+      <div class = "genre-item">
+        <h6 class = "genre-name"><i class="fas fa-film"></i>  ${ genre.name }</h6>
+        <h6 class = "movie-title">${ movies_title }</h6>
+        <div class = "movie-list" v-for="movie in genre.movies">
+
+
+
+          <!--movies are categorized into their specific genres from db-->
+          <a :href="'/movies/' + movie.movies_id + movie.movies_title + '/' + movie.movies_trailer">
+          <img class = "movie-thumb" :src="'/images/' + movie.movies_cover" :alt="movie.movies_title">
+          <p class="moive_thumb" :alt="movie.movies_title"></p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+</section>

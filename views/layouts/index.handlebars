@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<!--google fonts for styling-->
+
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+
+</head>
+<body>
+	<header>
+		<!--logo svg image, I wasn't in Jarrod's design class last term, so I created my own logo and theme for this app-->
+		<img src="/images/name.svg" alt="Name logo" width="90"><p>Movies Online</p>
+
+		<nav class="main_menu">
+			<ul class="menu_links">
+				<li><a href="/kids_movie">Kids Movies  <i class="fas fa-smile"></i></a></li>
+				<li><i class="fas fa-users"></i></li>
+				<li><i class="fas fa-sliders-h"></i></li>
+				<li><i class="fas fa-bars"></i></li>
+			</ul>
+		</nav>
+
+	</header>
+
+
+	<!--content to this handlebar can be found in index.js-->
+	<main>
+		{{{ body }}}
+	</main>
+
+
+
+	<!--main footer begins with social media icons (plugins)-->
+	<footer class="main-footer">
+
+		<!--Social media icons work when user is logged into their accounts that gives them the ability to like, share, pin, tweet, and comment-->
+		<h1 class="media_icons">Connect with Social Media below:</h1>
+		<br><br>
+
+		<ul class="social">
+
+			<li>
+
+				<!--youtube subscribe to channel api plugin-->
+			<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default"></div>
+
+			<!--policy required a referenced from GoogleDevelopers (https://developers.google.com/terms/site-policies)-->
+			<script src="https://apis.google.com/js/platform.js"></script>
+
+
+			</li>
+
+			<br>
+
+			<li>
+
+				<!--Pinterest pin button-->
+			<i><a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
+
+			<br>
+
+			<!--Pinterest Javascript link-->
+			<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+			<!--Pinterest profile button (links to your pinterest account)-->
+			<a href="https://www.pinterest.com/<KarleeF>/" data-pin-do="buttonFollow">Moives Online</a>
+
+
+			</li>
+
+			<br><br>
+
+			<li>
+
+				<!--Twitter Tweet button-->
+				<iframe src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&via=twitterdev&related=twitterapi%2Ctwitter&text=custom%20share%20text&hashtags=example%2Cdemo" width="100" height="37" title="Twitter Tweet Button" style="border: 0; overflow: hidden;"></iframe>
+
+
+				<!--Twitter Follow button-->
+				<iframe src="https://platform.twitter.com/widgets/follow_button.html?screen_name=karlee_web23&show_screen_name=false&show_count=false&size=l" title="Follow TwitterDev on Twitter" width="100" height="37" style="border: 0; overflow: hidden;"></iframe>
+
+
+			</li>
+
+			<br>
+
+			<li>
+
+				<i class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
+
+				<!--facebook share button-->
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+				<br>
+
+				<!--facebook like button-->
+				<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+
+
+				<!--LEFT PLUGINS AS GoogleDevelopers OR FACEBOOK DEVELOPERS BECAUSE I WANTED TO SHOW THEIR USE AND HOW MANY PEOPLE HAVE COMMENTED, LIKED, SHARED, ETC...-->
+
+
+				<!--facebook comment plugin (connects to a user's login account)-->
+					<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+
+
+				<!--facebook JavaScript SDK-->
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			  </script>
+
+			</li>
+		</ul>
+
+
+
+
+		<!--copyrigts statement-->
+		<p class="copy">
+			Project Rights &copy; 2018 Karlees Movies Online
+		</p>
+
+
+
+	</footer>
+
+
+<!--scripts (js)-->
+<script>
+
+  var appData = {
+		//grabs movies
+    movies : {{{ data }}}
+   }
+</script>
+
+<!--handlebars for JavaScript files depending on which page user is on-->
+{{#if mainpage}}
+<script src="/js/main.js"></script>
+{{/if}}
+
+
+{{#if videopage}}
+<script src="/js/videopage.js"></script>
+{{/if}}
+
+</script>
+</body>
+</html>
